@@ -8,7 +8,7 @@ import AlertModule from "@/components/AlertModule";
 import HologramCard from "@/components/HologramCard";
 import { mountAlertsScene } from "@/three/AlertsScene";
 import CreateAlertModal from "@/components/CreateAlertModal";
-import io from 'socket.io-client';
+import io, { Socket } from 'socket.io-client';
 import "@/styles/hologram.css";
 import "@/styles/buttons.css";
 
@@ -60,7 +60,7 @@ const mockAlerts: Alert[] = [
 export default function Alerts() {
   const [alerts, setAlerts] = useState(mockAlerts);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [socket, setSocket] = useState<any>(null);
+  const [socket, setSocket] = useState<Socket | null>(null);
   const [settings, setSettings] = useState({
     closeApproach: true,
     hazardous: true,

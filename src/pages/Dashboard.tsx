@@ -4,7 +4,7 @@ import HologramCard from "@/components/HologramCard";
 import RiskMeter3D from "@/components/RiskMeter3D";
 import AsteroidTile from "@/components/AsteroidTile";
 import { useAsteroids } from "@/hooks/useAsteroids";
-import { mockAsteroids } from "@/lib/asteroidData";
+import { mockAsteroids, Asteroid } from "@/lib/asteroidData";
 import { useWatchlist } from "@/context/WatchlistContext";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -131,7 +131,7 @@ export default function Dashboard() {
                 </div>
               </div>
               <div style={{ marginTop: 12 }} className="cw-riskBar">
-                <div className={`cw-riskFill ${avgRiskScore >= 70 ? "is-critical" : avgRiskScore >= 50 ? "is-high" : avgRiskScore >= 30 ? "is-moderate" : ""}`} style={{ "--p": `${Math.min(avgRiskScore, 100)}%` } as any} />
+                <div className={`cw-riskFill ${avgRiskScore >= 70 ? "is-critical" : avgRiskScore >= 50 ? "is-high" : avgRiskScore >= 30 ? "is-moderate" : ""}`} style={{ "--p": `${Math.min(avgRiskScore, 100)}%` } as React.CSSProperties} />
               </div>
             </HologramCard>
             <HologramCard accent="rgba(45,255,192,0.22)">

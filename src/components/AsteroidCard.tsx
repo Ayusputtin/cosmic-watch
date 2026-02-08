@@ -31,7 +31,7 @@ export function AsteroidCard({ asteroid, onWatch, onView, isWatched }: AsteroidC
       case 'destructive':
         return 'destructive';
       case 'warning':
-        return 'warning' as any;
+        return 'secondary'; // Changed from 'warning' as any to 'secondary' since 'warning' is not a valid variant
       default:
         return 'secondary';
     }
