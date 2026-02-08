@@ -1,0 +1,29 @@
+.cw-btn3d {
+  position: relative;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(180deg, rgba(120, 190, 255, 0.18), rgba(20, 26, 40, 0.35));
+  color: rgba(245, 250, 255, 0.96);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transform: translateY(0);
+  box-shadow:
+    0 10px 0 rgba(0, 0, 0, 0.22),
+    0 16px 34px rgba(0, 0, 0, 0.35);
+  transition: transform 110ms ease, box-shadow 110ms ease, filter 160ms ease;
+}
+
+.cw-btn3d:hover {
+  filter: drop-shadow(0 0 14px rgba(87, 185, 255, 0.25));
+}
+
+.cw-btn3d:active {
+  transform: translateY(2px);
+  box-shadow:
+    0 8px 0 rgba(0, 0, 0, 0.22),
+    0 12px 26px rgba(0, 0, 0, 0.32);
+}
+
+.cw-btn3d.is-danger:hover {
+  filter: drop-shadow(0 0 16px rgba(255, 80, 120, 0.28));
+}

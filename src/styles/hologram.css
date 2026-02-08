@@ -1,0 +1,168 @@
+.cw-page3d {
+  position: relative;
+  min-height: 100vh;
+}
+
+.cw-threeBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cw-uiLayer {
+  position: relative;
+  z-index: 2;
+}
+
+ .cw-threeBg canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+ }
+
+.cw-holoGrid {
+  display: grid;
+  gap: 14px;
+}
+
+.cw-holoCard {
+  position: relative;
+  border-radius: 18px;
+  border: 1px solid rgba(87, 185, 255, 0.22);
+  background: linear-gradient(
+    180deg,
+    rgba(6, 10, 20, 0.74) 0%,
+    rgba(6, 9, 16, 0.66) 100%
+  );
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.62),
+    0 0 0 1px rgba(87, 185, 255, 0.12) inset,
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+    0 0 90px rgba(87, 185, 255, 0.10);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transform-style: preserve-3d;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  overflow: hidden;
+}
+
+.cw-holoCard::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: radial-gradient(
+    760px 240px at var(--mx, 40%) var(--my, 40%),
+    rgba(140, 220, 255, 0.16),
+    rgba(87, 185, 255, 0.05) 42%,
+    transparent 62%
+  );
+  opacity: 0.88;
+  pointer-events: none;
+}
+
+.cw-holoCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05) 0px,
+    rgba(255, 255, 255, 0.015) 2px,
+    rgba(255, 255, 255, 0) 6px
+  );
+  opacity: 0.14;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.cw-holoCard:hover {
+  border-color: rgba(120, 210, 255, 0.40);
+  box-shadow:
+    0 30px 85px rgba(0, 0, 0, 0.68),
+    0 0 0 1px rgba(87, 185, 255, 0.16) inset,
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+    0 0 120px rgba(90, 190, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.cw-holoHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cw-holoTitle {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(214, 226, 255, 0.70);
+}
+
+.cw-holoValue {
+  font-size: 30px;
+  font-weight: 800;
+  color: rgba(245, 250, 255, 0.98);
+}
+
+.cw-holoSub {
+  margin-top: 6px;
+  font-size: 12px;
+  color: rgba(214, 226, 255, 0.62);
+}
+
+.cw-riskBar {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.cw-riskFill {
+  height: 100%;
+  border-radius: 999px;
+  width: var(--p, 0%);
+  background: linear-gradient(90deg, rgba(45, 255, 192, 0.9), rgba(87, 185, 255, 0.85));
+  box-shadow: 0 0 16px rgba(87, 185, 255, 0.30);
+}
+
+.cw-riskFill.is-moderate {
+  background: linear-gradient(90deg, rgba(255, 214, 85, 0.95), rgba(87, 185, 255, 0.80));
+}
+
+.cw-riskFill.is-high {
+  background: linear-gradient(90deg, rgba(255, 165, 55, 0.98), rgba(255, 80, 120, 0.70));
+}
+
+.cw-riskFill.is-critical {
+  background: linear-gradient(90deg, rgba(255, 80, 120, 0.98), rgba(255, 0, 80, 0.72));
+  box-shadow: 0 0 22px rgba(255, 80, 120, 0.30);
+}
+
+.cw-pulseCritical {
+  animation: cwPulse 1.4s ease-in-out infinite;
+}
+
+.cw-dashboardContainer {
+  max-width: 1120px;
+}
+
+.cw-dashboardKpiGrid {
+  row-gap: 18px;
+}
+
+@media (min-width: 1024px) {
+  .cw-dashboardKpiGrid {
+    column-gap: 18px;
+  }
+}
+
+@keyframes cwPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(255, 80, 120, 0.18));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(255, 80, 120, 0.35));
+  }
+}
