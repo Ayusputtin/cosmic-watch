@@ -27,6 +27,7 @@
     "mongoose": "^8.0.0",
     "node-cron": "^3.0.3",
     "socket.io": "^4.7.2",
+    "vite_react_shadcn_ts": "file:..",
     "winston": "^3.11.0"
   },
   "devDependencies": {
